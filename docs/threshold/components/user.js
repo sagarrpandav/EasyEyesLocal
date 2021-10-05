@@ -31,7 +31,8 @@ if (window.location.hash == '') {
 }
 
 const redirectToOauth2 = async () => {
-    location.href = 'https://gitlab.pavlovia.org//oauth/authorize?client_id=f43ec84eac32326bd40b28f79728bfb5ba32cace89d580662cdb46da3b7dcc8d&redirect_uri=http%3A%2F%2Flocalhost%3A63342%2Fwebsite%2Fdocs%2Fthreshold%2F&scope=api&response_type=token&response_mode=query&nonce=1587kx42hje';
+    /*location.href = 'https://gitlab.pavlovia.org//oauth/authorize?client_id=f43ec84eac32326bd40b28f79728bfb5ba32cace89d580662cdb46da3b7dcc8d&redirect_uri=http%3A%2F%2Flocalhost%3A63342%2Fwebsite%2Fdocs%2Fthreshold%2F&scope=api&response_type=token&response_mode=query&nonce=1587kx42hje';*/
+    location.href = 'https://gitlab.pavlovia.org//oauth/authorize?client_id=f43ec84eac32326bd40b28f79728bfb5ba32cace89d580662cdb46da3b7dcc8d&redirect_uri=https%3A%2F%2Fsuspicious-babbage-3c470b.netlify.app%2Fthreshold%2F&scope=api&response_type=token&response_mode=query&nonce=rrazxuxudhj';
 }
 
 const redirectToPalvoliaActivation = async () => {
