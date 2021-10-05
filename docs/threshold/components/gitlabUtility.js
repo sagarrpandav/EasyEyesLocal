@@ -9,7 +9,7 @@ const gitlabRoutine = async (files) => {
 
     if (isRepoValid) {
         const gitlabRepo = await createRepo(newRepoName);
-        user.newRepo = newRepoName;
+        user.newRepo = newRepoName.toLowerCase();
         await commitFilesToGitlabFromGithubAndEasyEyes(gitlabRepo, files);
         window.alert('New Repo '+ newRepoName +' has been successfully initiated')
         document.getElementById('waiting-div').style.visibility = 'hidden';
