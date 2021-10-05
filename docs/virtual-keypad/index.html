@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="author"
+      content="Denis Pelli, Peiling Jiang, Augustin Burchell"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-B8LSH945MT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-B8LSH945MT");
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Virtual keypad -->
+    <script src="https://cdn.jsdelivr.net/npm/virtual-keypad@latest/dist/main.min.js"></script>
+
+    <link rel="stylesheet" href="../uni.css" />
+    <link rel="stylesheet" href="main.css" />
+
+    <link rel="apple-touch-icon" href="../media/apple-touch-icon-blue.png" />
+    <link
+      rel="shortcut icon"
+      href="../media/favicon-blue.ico"
+      type="image/x-icon"
+    />
+    <title>EasyEyes | Virtual Keypad</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+      <a class="navbar-brand" href="."
+        ><img
+          class="easyeyes-logo"
+          src="../media/easyeyes-blue.svg"
+          alt="EasyEyes | Virtual Keypad"
+          width="80px"
+          height="80px"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../remote-calibrator/">Calibrator</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link active" href=".">Keypad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../acknowledgements.html"
+              >Acknowledgements</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../privacy.html">Privacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../references.html">References</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/EasyEyes">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="header">
+        <h1><span class="headline-next">Virtual</span> Keypad</h1>
+        <p class="description">
+          Use your smartphone as a keypad to respond from any distance. Just
+          point your smartphone camera at the QR code below, and click the
+          pop-up window that appears on your smartphone.
+        </p>
+      </div>
+      <section id="demo-section">
+        <div id="demo-widget">
+          <form id="demo-parameters-form">
+            <!-- FONT -->
+            <!-- <input type="radio" id="sloan" name="font-select" value="Sloan" />
+            <label for="sloan">Sloan</label> <br />
+            <input type="radio" id="pelli" name="font-select" value="Pelli" />
+            <label for="pelli">Pelli</label> <br /> -->
+            <p class="main-text" style="margin-bottom: 5px">Font</p>
+            <select id="font-select" name="font-select" id="font-select">
+              <option value="Sloan" selected>Sloan</option>
+              <option value="Pelli">Pelli</option>
+            </select>
+            <!-- ALPHABET -->
+            <p class="main-text" style="margin-bottom: 5px">
+              Alphabet (comma separated)
+            </p>
+            <!-- <label for="alphabet-input">Alphabet (comma separated)</label><br /> -->
+            <input type="text" id="alphabet-input" name="alphabet-input" />
+            <input type="submit" id="alphabet-submit" value="Submit" />
+          </form>
+          <div id="qrcode-demo"></div>
+        </div>
+      </section>
+      <section id="for-programmers">
+        <p class="main-text">
+          <b>Programmers: </b>From within an online experiment (such as one
+          created using
+          <a href="https://github.com/psychopy/psychojs">PsychoJS</a>
+          or <a href="https://lab.js.org">lab.js</a>), initiate an appropriate
+          <code>Receiver</code> to provide the participant with a unique QR
+          code. Use this <code>Receiver</code> object throughout the experiment
+          to update keypad parameters or provide messages to the participant -
+          bidirectional communication between the <code>Receiver</code> and
+          <code>Keypad</code> allows for trial-by-trial adjustment of font and
+          alphabet.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <a href="https://github.com/EasyEyes/virtual-keypad"
+        ><img
+          alt="GitHub stars"
+          src="https://img.shields.io/github/stars/EasyEyes/virtual-keypad?style=flat-square"
+      /></a>
+      <a href="https://npmjs.org/package/virtual-keypad"
+        ><img
+          alt="npm version"
+          src="https://img.shields.io/npm/v/virtual-keypad.svg?style=flat-square"
+      /></a>
+      <a href="https://github.com/EasyEyes/virtual-keypad/blob/main/LICENSE"
+        ><img
+          alt="GitHub license"
+          src="https://img.shields.io/github/license/EasyEyes/virtual-keypad?style=flat-square"
+      /></a>
+      <a href="https://www.jsdelivr.com/package/npm/virtual-keypad"
+        ><img
+          alt="jsdelivr"
+          src="https://data.jsdelivr.com/v1/package/npm/virtual-keypad/badge"
+      /></a>
+      <p>EasyEyes Team 2021</p>
+    </footer>
+
+    <script>
+      // document.getElementById("sloan").checked = true;
+
+      var receivedData = [];
+      let keypad_options = {
+        // Specify a 'keypadUrl' field if you really need to redirect to a keypad hosted elsewhere
+        alphabet: [..."CDHKNORSVZ".split(""), "ESC", "SPACE"], // Set of symbols to display; array perfered
+        font: "Sloan", // Supported font, in which to display letters
+        targetElementId: "qrcode-demo", // id of the the div where messages should be displayed
+      };
+      let ondata_callback = (data) => {
+        receivedData.push(data.response);
+        const displayPort = document.getElementById("qrcode-demo");
+        displayPort.innerText += data.response + ", ";
+        if (receivedData.length % 30 == 0) {
+          displayPort.innerText += "\n";
+        }
+        console.log(receivedData);
+      };
+      var receiver = new virtualKeypad.Receiver(
+        keypad_options,
+        ondata_callback
+      );
+      // Handle form submission of new alphabet
+      const newAlphabetSubmitted = (event) => {
+        let alphabetString = document.getElementById("alphabet-input").value;
+        // https://css-tricks.com/snippets/javascript/strip-whitespace-from-string/
+        alphabetString = alphabetString.trim().replace(/\s+/g, "");
+
+        if (document.querySelector("#font-select").value === "Sloan") {
+          // Sloan font
+          alphabetString = alphabetString.toUpperCase();
+        } else {
+          // Pelli font
+          // Pelli font only supports numbers
+          alphabetString.replace(/[^0-9,]/g, "");
+        }
+
+        const alphabet = alphabetString.split(",");
+        try {
+          receiver.updateAlphabet(alphabet); // TODO verify updateAlphabet works
+          document.getElementById("alphabet-input").value = ""; // Reset text field?
+        } catch (error) {
+          console.error(error);
+          alert("Error updating alphabet. Sorry for the inconvenience!");
+        }
+      };
+
+      // Handle form submission of new font
+      const newFontSelected = (font) => {
+        try {
+          receiver.updateFont(font); // TODO verify updateFont works
+        } catch (error) {
+          console.error(error);
+          alert("Error updating font. Sorry for the inconvenience!");
+        }
+      };
+
+      // Assign font button handlers
+      // const fontButtons = document.getElementsByName("font-select");
+      // for (let i = 0; i < fontButtons.length; i++) {
+      //   const selectedFont = fontButtons[i].value;
+      //   fontButtons[i].onclick = () => {
+      //     newFontSelected(selectedFont);
+      //   };
+      // }
+      document.querySelector("#font-select").onchange = (e) => {
+        newFontSelected(document.querySelector("#font-select").value);
+      };
+      // Assign alphabet from handler
+      document
+        .getElementById("demo-parameters-form")
+        .addEventListener("submit", newAlphabetSubmitted);
+    </script>
+  </body>
+</html>

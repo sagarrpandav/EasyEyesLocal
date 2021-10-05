@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="The open-source EasyEyes web app is meant to help anyone
+      test vision online. EasyEyes measures screen size once and uses the
+      webcam to track head and gaze continuously. It also allows use of a
+      smartphone to emulate a wireless keypad. Currently, we have a working
+      prototype with limited documentation. We are using it with PsychoPy.
+      You are welcome to use it with any online testing software."
+    />
+    <meta
+      name="keywords"
+      content="measure, calibration, psychology, psychophysics"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-B8LSH945MT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-B8LSH945MT");
+    </script>
+
+    <!-- External -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Internal -->
+
+    <link rel="stylesheet" href="uni.css" />
+
+    <meta
+      name="author"
+      content="Denis Pelli, Peiling Jiang, Augustin Burchell"
+    />
+    <link rel="apple-touch-icon" href="media/apple-touch-icon-default.png" />
+    <link
+      rel="shortcut icon"
+      href="media/favicon-default.ico"
+      type="image/x-icon"
+    />
+    <title>EasyEyes | Acknowledgements</title>
+
+    <style>
+      .citations {
+        margin-top: 5rem;
+      }
+
+      .citations h1 {
+        margin-bottom: 2rem;
+      }
+
+      .citations p:not(.note) {
+        padding-left: 1.5rem;
+        text-indent: -1.5rem;
+      }
+
+      .citations .note * {
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+      <a class="navbar-brand" href="."
+        ><img
+          class="easyeyes-logo"
+          src="media/easyeyes-default.svg"
+          alt="EasyEyes"
+          width="80px"
+          height="80px"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href=".">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="remote-calibrator/">Calibrator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="virtual-keypad/">Keypad</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link active" href="acknowledgements.html"
+              >Acknowledgements</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="privacy.html">Privacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="references.html">References</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/EasyEyes">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="citations">
+        <h1>Acknowledgements</h1>
+        <div class="columns-on-large-screen">
+          <p class="note">
+            The EasyEyes gaze tracker uses the open-source WebGazer.js package
+            from Papoutsaki et al. (2016). WebGazer and the EasyEyes head
+            tracker both use Google's open-source FaceMesh software (Kartynnik
+            et al., 2019). Other dependencies of each EasyEyes module can be
+            found in its package configuration file in its GitHub repository.
+            The EasyEyes icon is a block print by Cassandra Hussey, used with
+            permission.
+          </p>
+          <p class="note">
+            As we were wrapping up our development of the EasyEyes Remote
+            Calibrator, we learned of
+            <a href="https://twitter.com/ThomasPronk123" target="_blank"
+              >Thomas Pronk</a
+            >'s project
+            <a href="https://gitlab.pavlovia.org/tpronk/demo_eye_tracking2/"
+              ><em>Eye tracking via a webcam, version 2</em></a
+            >
+            that also integrates WebGazer into PsychoJS. The EasyEyes version
+            offers a more stable customized build of WebGazer, including several
+            new features like customized framerate and predicting at the
+            reaction, which is modified to work with other EasyEyes modules and
+            packaged to easily add to any existing experiment pipeline. Another
+            major difference is that the vanilla WebGazer keeps learning from
+            user's interactions even after the calibration phase, which may
+            cause unintentional shifts as participants may look at the fixation
+            while clicking at another position in an experiment. Modified
+            WebGazer in Remote Calibrator allows you to pause learning while
+            keeping prediction.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>EasyEyes Team 2021</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+* {
+  outline: none;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #333;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 170%;
+}
+
+@media screen and (min-width: 960px) {
+  .columns-on-large-screen {
+    column-count: 2;
+    column-gap: 3rem;
+  }
+}
+
+.navbar {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background: #fff;
+}
+
+.nav-item {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+:not(.show) .nav-item {
+  margin-left: 1rem;
+}
+
+main {
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  width: 90%;
+  max-width: 960px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+#header {
+  margin-top: 5rem;
+  /* width: 80%; */
+  /* padding-bottom: 1rem; */
+  /* border-bottom: solid 1px #ccc; */
+}
+
+#header h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  /* color: #FF9A00; */
+  /* font-size: 3rem; */
+  /* font-weight: 700; */
+}
+
+#header .description {
+  font-size: 1.5rem;
+  line-height: 170%;
+  color: #666;
+}
+
+.headline-next {
+  font-weight: 200;
+}
+
+/* -------------------------------------------------------------------------- */
+
+section h2 {
+  font-size: 2rem;
+}
+
+section p {
+  margin-top: 1rem;
+}
+
+.main-text a {
+  color: #666;
+}
+
+/* -------------------------------------------------------------------------- */
+
+footer {
+  margin: 3rem auto;
+  text-align: center;
+  /* border-top: 1px solid #eee; */
+}
+
+footer p {
+  margin-top: 1rem;
+  color: #999;
+  font-size: 0.875rem;
+}
